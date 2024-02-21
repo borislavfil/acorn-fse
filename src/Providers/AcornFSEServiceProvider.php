@@ -4,7 +4,7 @@ namespace Zirkeldesign\AcornFSE\Providers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Facades\Blade;
-use Roots\Acorn\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Zirkeldesign\AcornFSE\AcornFSE;
 use Zirkeldesign\AcornFSE\Console\AcornFSECommand;
 
@@ -20,7 +20,7 @@ class AcornFSEServiceProvider extends ServiceProvider
         $this->app->singleton('acorn.fse', AcornFSE::class);
 
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/fse.php',
+            __DIR__ . '/../../config/fse.php',
             'fse'
         );
     }
@@ -44,16 +44,16 @@ class AcornFSEServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'/../../config/fse.php' => $this->app->configPath('fse.php'),
+                __DIR__ . '/../../config/fse.php' => $this->app->configPath('fse.php'),
             ],
             'fse-config'
         );
 
         $this->publishes(
             [
-                __DIR__.'/../../stubs/parts' => $this->app->basePath('parts'),
-                __DIR__.'/../../stubs/patterns' => $this->app->basePath('patterns'),
-                __DIR__.'/../../stubs/templates' => $this->app->basePath('templates'),
+                __DIR__ . '/../../stubs/parts' => $this->app->basePath('parts'),
+                __DIR__ . '/../../stubs/patterns' => $this->app->basePath('patterns'),
+                __DIR__ . '/../../stubs/templates' => $this->app->basePath('templates'),
             ],
             'fse-theme-files'
         );

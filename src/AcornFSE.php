@@ -75,7 +75,7 @@ class AcornFSE
 
         add_filters($this->hierarchy_hooks, [$this, 'filterTemplateHierarchy']);
 
-        add_filter('template_include', [$this, 'filterTemplateInclude'], 100);
+        //add_filter('template_include', [$this, 'filterTemplateInclude'], 100);
     }
 
     /**
@@ -87,7 +87,7 @@ class AcornFSE
 
         remove_filters($this->hierarchy_hooks, [$sage, 'filterTemplateHierarchy']);
 
-        \remove_filter('template_include', [$sage, 'filterTemplateInclude'], 100);
+        //\remove_filter('template_include', [$sage, 'filterTemplateInclude'], 100);
     }
 
     /**
