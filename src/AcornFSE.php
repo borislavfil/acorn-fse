@@ -61,7 +61,7 @@ class AcornFSE
 
         $this->app->getProvider(SageServiceProvider::class)?->booted(
             function () {
-                $this->checkThemeService->audit();
+                //$this->checkThemeService->audit();
                 $this->bindCompatFilters();
             });
     }
